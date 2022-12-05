@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="DirectX">
+      <UniqueIdentifier>{17fed3da-fd3b-4844-a113-dd2fadcf46d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\BlendState">
+      <UniqueIdentifier>{b427abdb-8953-4a8a-9fa3-d7fa03164673}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\ConstantBuffer">
+      <UniqueIdentifier>{79109661-4bcc-4858-8c87-ff3f30a44517}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\DirectX">
+      <UniqueIdentifier>{e080289d-0f5e-4c9d-b11e-b9bf44c50085}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\MeshBuffer">
+      <UniqueIdentifier>{b84d66f8-8043-4717-8c13-71d416c7067d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\Texture">
+      <UniqueIdentifier>{0e760297-c51c-4427-8e48-7c96c77163a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\Shader">
+      <UniqueIdentifier>{e0aa5d66-af3b-420c-81a9-40156981e9ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\SamplerState">
+      <UniqueIdentifier>{b76c5346-705c-445b-b3e5-1846cc687c74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{bdb9e6f5-4652-4874-b37f-107f01e011c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{7a150e3a-8679-49c6-9b55-7bcfeebdd9e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Input">
+      <UniqueIdentifier>{228e93b1-bb1a-472c-85b1-f9ef9f092985}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\StartUp">
+      <UniqueIdentifier>{ba3dc8ed-d2ba-412f-b017-b179ccf3901d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Timer">
+      <UniqueIdentifier>{17a50bae-4d17-45b6-a6e7-a85035966718}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\WinUtil">
+      <UniqueIdentifier>{fae18621-7821-4249-94ad-b7c47ccaf07d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hlsl">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Hlsl\PixelShader">
+      <UniqueIdentifier>{865c95b5-4ad7-46a4-a469-6190dad53e13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hlsl\VertexShader">
+      <UniqueIdentifier>{5f1a4bdd-0ff7-42cd-9a72-2a3f65059884}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{736acba3-18c9-4c36-b57c-4aff8ecabec7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Game">
+      <UniqueIdentifier>{5cc86b97-6be0-450c-9259-7b0a6824b168}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Component">
+      <UniqueIdentifier>{a22a13ee-9db8-4a34-8ffd-a01639d1e4eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Component\MeshRenderer">
+      <UniqueIdentifier>{139473ae-98f6-4e66-9b13-4b932cfeacdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object">
+      <UniqueIdentifier>{f353f13f-7fb0-42cb-83a9-87659fcef13a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\0_ObjectBase">
+      <UniqueIdentifier>{949ed674-9a8a-4430-b1f4-faa09cd73ebe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Object3D">
+      <UniqueIdentifier>{5261aef8-d51e-471a-8bc3-5f2288193be1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\0_TagName">
+      <UniqueIdentifier>{54db4e45-953b-44e3-a0ae-36a983d60343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Component\Transform">
+      <UniqueIdentifier>{ca6d4c9f-4f96-4cf7-a2ae-7a0a1a1ffa0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\0_ObjectManager">
+      <UniqueIdentifier>{ab71fbc4-5040-4a6b-b4ac-a75e3ea0826a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Component\Camera%28Component%29">
+      <UniqueIdentifier>{74a267ba-aa8e-4f98-9eb4-a52f5dcab251}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\CameraObj%28Object%29">
+      <UniqueIdentifier>{90f15692-fd01-4905-b3af-dac4ee309f34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Component\Rigidbody">
+      <UniqueIdentifier>{5f9010e4-d4f9-4c53-99bb-c65c9324cb9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\UI">
+      <UniqueIdentifier>{98cce5b3-76b4-4d5e-9ada-e77282631697}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Component\SpriteRenderer">
+      <UniqueIdentifier>{a7835ce2-a2ab-45cc-9526-b56b306d0f1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\VertexBuffer">
+      <UniqueIdentifier>{459d8332-4e7a-4887-b3c0-eae80fe98327}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene">
+      <UniqueIdentifier>{a0b0ff51-d6f6-4ced-86c0-8f1dfe4aa774}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Component\0_ComponentBase">
+      <UniqueIdentifier>{0770893f-9aa6-4308-b216-44b1d56275f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\0_SceneBase">
+      <UniqueIdentifier>{f50dfd7d-6aa7-4394-9e28-6eda7608af99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\0_SceneManager">
+      <UniqueIdentifier>{553ce395-0871-468a-b3b2-b7f0415cfc11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\0_SceneName">
+      <UniqueIdentifier>{ab94b7a0-a95d-4089-83c0-d580b0db5345}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\SceneGame01">
+      <UniqueIdentifier>{cc383ed0-c6bf-4597-a1d2-117d68fc4b69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\SceneTitle">
+      <UniqueIdentifier>{550c5422-465a-41ba-aaba-826161e1f83a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Object3D\Cube">
+      <UniqueIdentifier>{7d2bb84b-123e-40b0-81c6-9f9f5a7a703a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\XInput">
+      <UniqueIdentifier>{6905bb39-7fe1-43eb-8865-b4524ca65683}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Component\Camera%28Component%29\CameraDebug">
+      <UniqueIdentifier>{423ac50e-466f-4d15-b929-2c55bb199198}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Primitive">
+      <UniqueIdentifier>{fcb0cb9c-81b7-4e7b-8f85-c49cfab56cf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Primitive\Float3">
+      <UniqueIdentifier>{fb24cac5-8e65-4e49-bab7-be9599d4715b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Primitive\Vector3">
+      <UniqueIdentifier>{64662d9f-5635-48f5-b5ae-c5cc17b929f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Primitive\Line">
+      <UniqueIdentifier>{a5f08b89-f81d-4977-9326-30f3f68bcfd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Primitive\Point">
+      <UniqueIdentifier>{2a268827-692b-4a4b-9588-835fd546d3ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Primitive\Segment">
+      <UniqueIdentifier>{4dfb9a75-153a-4f57-9def-873fa4a4d4e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Primitive\Sphere">
+      <UniqueIdentifier>{616e5ff8-b63a-4ef6-96f6-5e2de9312df6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Primitive\Capsule">
+      <UniqueIdentifier>{b0349333-de0f-44db-953d-5ea7c8efee2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Primitive\AABB">
+      <UniqueIdentifier>{9e209b91-8c40-4ec2-9cf7-b78739dc4b0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Component\Collider">
+      <UniqueIdentifier>{95880f1b-07a9-46c0-9fd8-4f11f0dd33e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Component\Collider\0_ColliderBase">
+      <UniqueIdentifier>{6671074d-1faf-4d80-8e0c-c9ab2fc44057}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Component\Collider\0_ColliderManager">
+      <UniqueIdentifier>{4a935790-28a0-406b-8382-0fef94c559b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Component\Collider\AABBCollider">
+      <UniqueIdentifier>{f629678b-7369-4db8-9588-db98d37cd683}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Object3D\Player">
+      <UniqueIdentifier>{f249c6da-8b16-4034-9a30-f1eef54b0940}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Object3D\Arrow">
+      <UniqueIdentifier>{882c3dfa-1e43-4064-9455-a3c0c5cb6047}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Component\PlayerController">
+      <UniqueIdentifier>{d4136834-dde6-4751-b51a-2993b4bca160}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Component\Camera%28Component%29\CameraPlayer">
+      <UniqueIdentifier>{c10e6a2c-a021-45e2-ad4a-55eef2f3de6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\CameraObj%28Object%29\CameraObjPlayer">
+      <UniqueIdentifier>{d881c552-58fa-4e14-bd5c-9d9c79c797d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Object3D\Enemy">
+      <UniqueIdentifier>{97b8c0da-97fc-4a5b-804f-c70562c2d58d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Component\EnemyController">
+      <UniqueIdentifier>{7064e854-85b8-4f70-b1ea-51f70ec99fcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Object3D\Field">
+      <UniqueIdentifier>{db522521-94a8-4709-a3be-cdd0ca7f73ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Component\ArrowController">
+      <UniqueIdentifier>{d98fa7d4-11f7-4240-bdb2-6c232db3ebbd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Shader.cpp">
+      <Filter>DirectX\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="SamplerState.cpp">
+      <Filter>DirectX\SamplerState</Filter>
+    </ClCompile>
+    <ClCompile Include="BlendState.cpp">
+      <Filter>DirectX\BlendState</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstantBuffer.cpp">
+      <Filter>DirectX\ConstantBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectX.cpp">
+      <Filter>DirectX\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshBuffer.cpp">
+      <Filter>DirectX\MeshBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXTex\Texture.cpp">
+      <Filter>DirectX\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WinUtil.cpp">
+      <Filter>System\WinUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>System\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="StartUp.cpp">
+      <Filter>System\StartUp</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>System\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Game3D.cpp">
+      <Filter>Game\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshRenderer.cpp">
+      <Filter>Game\Component\MeshRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Game\Component\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>Game\Object\0_ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectBase.cpp">
+      <Filter>Game\Object\0_ObjectBase</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentBase.cpp">
+      <Filter>Game\Component\0_ComponentBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Game\Component\Camera%28Component%29</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraObjBase.cpp">
+      <Filter>Game\Object\CameraObj%28Object%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Rigidbody.cpp">
+      <Filter>Game\Component\Rigidbody</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexBuffer.cpp">
+      <Filter>DirectX\VertexBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteRenderer.cpp">
+      <Filter>Game\Component\SpriteRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneBase.cpp">
+      <Filter>Game\Scene\0_SceneBase</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneGame01.cpp">
+      <Filter>Game\Scene\SceneGame01</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>Game\Scene\SceneTitle</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Game\Scene\0_SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="XInput.cpp">
+      <Filter>System\XInput</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraDebug.cpp">
+      <Filter>Game\Component\Camera%28Component%29\CameraDebug</Filter>
+    </ClCompile>
+    <ClCompile Include="ColliderBase.cpp">
+      <Filter>Game\Component\Collider\0_ColliderBase</Filter>
+    </ClCompile>
+    <ClCompile Include="ColliderManager.cpp">
+      <Filter>Game\Component\Collider\0_ColliderManager</Filter>
+    </ClCompile>
+    <ClCompile Include="AABBCollider.cpp">
+      <Filter>Game\Component\Collider\AABBCollider</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerController.cpp">
+      <Filter>Game\Component\PlayerController</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraPlayer.cpp">
+      <Filter>Game\Component\Camera%28Component%29\CameraPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyController.cpp">
+      <Filter>Game\Component\EnemyController</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrowController.cpp">
+      <Filter>Game\Component\ArrowController</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Shader.h">
+      <Filter>DirectX\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="SamplerState.h">
+      <Filter>DirectX\SamplerState</Filter>
+    </ClInclude>
+    <ClInclude Include="BlendState.h">
+      <Filter>DirectX\BlendState</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantBuffer.h">
+      <Filter>DirectX\ConstantBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX.h">
+      <Filter>DirectX\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshBuffer.h">
+      <Filter>DirectX\MeshBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXTex\Texture.h">
+      <Filter>DirectX\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WinUtil.h">
+      <Filter>System\WinUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>System\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>System\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Game3D.h">
+      <Filter>Game\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshRenderer.h">
+      <Filter>Game\Component\MeshRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Object3D.h">
+      <Filter>Game\Object\Object3D</Filter>
+    </ClInclude>
+    <ClInclude Include="TagName.h">
+      <Filter>Game\Object\0_TagName</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Game\Component\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>Game\Object\0_ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectBase.h">
+      <Filter>Game\Object\0_ObjectBase</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentBase.h">
+      <Filter>Game\Component\0_ComponentBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Game\Component\Camera%28Component%29</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraObjBase.h">
+      <Filter>Game\Object\CameraObj%28Object%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Rigidbody.h">
+      <Filter>Game\Component\Rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>Game\Object\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteRenderer.h">
+      <Filter>Game\Component\SpriteRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexBuffer.h">
+      <Filter>DirectX\VertexBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneBase.h">
+      <Filter>Game\Scene\0_SceneBase</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneName.h">
+      <Filter>Game\Scene\0_SceneName</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>Game\Scene\SceneTitle</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneGame01.h">
+      <Filter>Game\Scene\SceneGame01</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Game\Scene\0_SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Cube.h">
+      <Filter>Game\Object\Object3D\Cube</Filter>
+    </ClInclude>
+    <ClInclude Include="XInput.h">
+      <Filter>System\XInput</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraDebug.h">
+      <Filter>Game\Component\Camera%28Component%29\CameraDebug</Filter>
+    </ClInclude>
+    <ClInclude Include="Float3.h">
+      <Filter>System\Primitive\Float3</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitive.h">
+      <Filter>System\Primitive</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>System\Primitive\Vector3</Filter>
+    </ClInclude>
+    <ClInclude Include="Line.h">
+      <Filter>System\Primitive\Line</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>System\Primitive\Point</Filter>
+    </ClInclude>
+    <ClInclude Include="Segment.h">
+      <Filter>System\Primitive\Segment</Filter>
+    </ClInclude>
+    <ClInclude Include="Sphere.h">
+      <Filter>System\Primitive\Sphere</Filter>
+    </ClInclude>
+    <ClInclude Include="Capsule.h">
+      <Filter>System\Primitive\Capsule</Filter>
+    </ClInclude>
+    <ClInclude Include="AABB.h">
+      <Filter>System\Primitive\AABB</Filter>
+    </ClInclude>
+    <ClInclude Include="ColliderBase.h">
+      <Filter>Game\Component\Collider\0_ColliderBase</Filter>
+    </ClInclude>
+    <ClInclude Include="ColliderManager.h">
+      <Filter>Game\Component\Collider\0_ColliderManager</Filter>
+    </ClInclude>
+    <ClInclude Include="AABBCollider.h">
+      <Filter>Game\Component\Collider\AABBCollider</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Game\Object\Object3D\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Arrow.h">
+      <Filter>Game\Object\Object3D\Arrow</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerController.h">
+      <Filter>Game\Component\PlayerController</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraPlayer.h">
+      <Filter>Game\Component\Camera%28Component%29\CameraPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraObjPlayer.h">
+      <Filter>Game\Object\CameraObj%28Object%29\CameraObjPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Game\Object\Object3D\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyController.h">
+      <Filter>Game\Component\EnemyController</Filter>
+    </ClInclude>
+    <ClInclude Include="Field.h">
+      <Filter>Game\Object\Object3D\Field</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrowController.h">
+      <Filter>Game\Component\ArrowController</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="GeometryPS.hlsl">
+      <Filter>Hlsl\PixelShader</Filter>
+    </FxCompile>
+    <FxCompile Include="ModelVS.hlsl">
+      <Filter>Hlsl\VertexShader</Filter>
+    </FxCompile>
+    <FxCompile Include="ModelPS.hlsl">
+      <Filter>Hlsl\PixelShader</Filter>
+    </FxCompile>
+    <FxCompile Include="UIVS.hlsl">
+      <Filter>Hlsl\VertexShader</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>
