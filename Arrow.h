@@ -9,18 +9,18 @@
 class Arrow : public Object3D
 {
 public:
-	// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	Arrow(std::string name, std::string tag) : Object3D(name, tag) {
-		// –î‚Ìƒ‚ƒfƒ‹‚ğƒ[ƒh‚·‚é
-		GetComponent<MeshRenderer>()->LoadModel("Assets/Model/Object/Arrow.fbx", 1.0f);
-		// ƒRƒ“ƒ|[ƒlƒ“ƒg‚ğ’Ç‰Á
+		// çŸ¢ã®ãƒ¢ãƒ‡ãƒ«ã‚’ãƒ­ãƒ¼ãƒ‰ã™ã‚‹
+		GetComponent<MeshRenderer>()->LoadModel("Assets/Model/DemoCube/DemoCube.fbx", 1.0f);
+		// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’è¿½åŠ 
 		AddComponent<Rigidbody>();
 		AddComponent<AABBCollider>();
 		AddComponent<ArrowController>();
-		// “–‚½‚è”»’è‚Ì‘å‚«‚³‚ğ’²®iƒ‚ƒfƒ‹“Ç‚İ‚İ“_j
+		// å½“ãŸã‚Šåˆ¤å®šã®å¤§ãã•ã‚’èª¿æ•´ï¼ˆãƒ¢ãƒ‡ãƒ«èª­ã¿è¾¼ã¿æ™‚ç‚¹ï¼‰
 		GetComponent<AABBCollider>()->SetLen({ 0.6f, 0.6f, 3.0f });
 	}
-	// ƒfƒXƒgƒ‰ƒNƒ^
+	// ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	~Arrow() {}
 };
 
