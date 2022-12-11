@@ -7,17 +7,24 @@
 class PlayerController : public ComponentBase
 {
 private:
+	//--- 射撃用
+	// 長押しによる溜め攻撃を使用可能になる時間
+	float m_ChargeTime;
+	float m_tic; // フレームカウント
+	std::shared_ptr<ObjectBase> m_haveArrow; // 現在プレイヤーが持っている矢のポインタ
 public:
-	// �R���X�g���N�^
-	PlayerController() {}
-	// �f�X�g���N�^
+	// コンストラクタ
+	PlayerController()
+		: m_ChargeTime(30.0f) // 60 fps の場合 0.5 秒
+	{}
+	// デストラクタ
 	~PlayerController() {}
 
-	// �X�V
+	// 更新
 	void Update()override;
 
 
-	// �����蔻��
+	// 当たり判定
 	void OnCollisionEnter(ObjectBase* object);
 	void OnCollisionStay(ObjectBase* object);
 	void OnCollisionExit(ObjectBase* object);
