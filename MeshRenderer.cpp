@@ -11,20 +11,20 @@
 #include "CameraDebug.h"
 #include "CameraPlayer.h"
 
-//--- •Ï”éŒ¾
+//--- å¤‰æ•°å®£è¨€
 VertexShader* MeshRenderer::m_pDefVS = nullptr;
 PixelShader* MeshRenderer::m_pDefPS = nullptr;
 unsigned int MeshRenderer::m_shaderRef = 0;
 std::list<std::pair<std::string, MeshRenderer::Info*>> MeshRenderer::m_ModelList;
 
-// ’¸“_î•ñ
+// é ‚ç‚¹æƒ…å ±
 struct MeshRenderer::Vertex
 {
 	DirectX::XMFLOAT3 pos;
 	DirectX::XMFLOAT2 uv;
 };
 
-// ƒ}ƒeƒŠƒAƒ‹
+// ãƒãƒ†ãƒªã‚¢ãƒ«
 struct MeshRenderer::Material
 {
 	DirectX::XMFLOAT4 diffuse;
@@ -32,7 +32,7 @@ struct MeshRenderer::Material
 	DirectX::XMFLOAT4 specular;
 	ID3D11ShaderResourceView* pTexture;
 };
-// ƒƒbƒVƒ…
+// ãƒ¡ãƒƒã‚·ãƒ¥
 struct MeshRenderer::Mesh
 {
 	Vertex* pVertices;
@@ -43,7 +43,7 @@ struct MeshRenderer::Mesh
 	MeshBuffer* pMesh;
 };
 
-//--- ƒvƒƒgƒ^ƒCƒvéŒ¾
+//--- ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€
 void MakeDefaultShader(VertexShader** vs, PixelShader** ps);
 
 MeshRenderer::MeshRenderer()
@@ -66,39 +66,39 @@ void MeshRenderer::Start()
 	m_pWVP = std::make_shared<ConstantBuffer>();
 	m_pWVP->Create(sizeof(m_Mat));
 
-	// s—ñ‚ğ’PˆÊs—ñ‚É‚·‚é‚½‚ß‚Ìİ’è
+	// è¡Œåˆ—ã‚’å˜ä½è¡Œåˆ—ã«ã™ã‚‹ãŸã‚ã®è¨­å®š
 	m_Mat[0]._11 = 1.0f;
 	m_Mat[0]._22 = 1.0f;
 	m_Mat[0]._33 = 1.0f;
 	m_Mat[0]._44 = 1.0f;
 }
 
-// ŒãXV
+// å¾Œæ›´æ–°
 void MeshRenderer::LateUpdate() {
-	// ˆÚ“®s—ñ
+	// ç§»å‹•è¡Œåˆ—
 	DirectX::XMMATRIX T = DirectX::XMMatrixTranslation(
 		GetOwner()->GetComponent<Transform>()->GetPosition().x,
 		GetOwner()->GetComponent<Transform>()->GetPosition().y,
 		GetOwner()->GetComponent<Transform>()->GetPosition().z);
-	// X‰ñ“]s—ñ
+	// Xå›è»¢è¡Œåˆ—
 	DirectX::XMMATRIX Rx = DirectX::XMMatrixRotationX(
 		DirectX::XMConvertToRadians(GetOwner()->GetComponent<Transform>()->GetAngle().x));
-	// Y‰ñ“]s—ñ
+	// Yå›è»¢è¡Œåˆ—
 	DirectX::XMMATRIX Ry = DirectX::XMMatrixRotationY(
 		DirectX::XMConvertToRadians(GetOwner()->GetComponent<Transform>()->GetAngle().y));
-	// Z‰ñ“]s—ñ
+	// Zå›è»¢è¡Œåˆ—
 	DirectX::XMMATRIX Rz = DirectX::XMMatrixRotationZ(
 		DirectX::XMConvertToRadians(GetOwner()->GetComponent<Transform>()->GetAngle().z));
-	// Šg‘åk¬s—ñ
+	// æ‹¡å¤§ç¸®å°è¡Œåˆ—
 	DirectX::XMMATRIX S = DirectX::XMMatrixScaling(
 		GetOwner()->GetComponent<Transform>()->GetScale().x,
 		GetOwner()->GetComponent<Transform>()->GetScale().y,
 		GetOwner()->GetComponent<Transform>()->GetScale().z);
 
-	// ‘S‚Ä‚Ìs—ñ‚ğˆê‚Â‚É‚Ü‚Æ‚ß‚é
+	// å…¨ã¦ã®è¡Œåˆ—ã‚’ä¸€ã¤ã«ã¾ã¨ã‚ã‚‹
 	DirectX::XMMATRIX mat = S * Ry * Rx * Rz * T;
 
-	// ƒVƒF[ƒ_‚É“n‚·‘O‚ÉÀs‚·‚éˆ—
+	// ã‚·ã‚§ãƒ¼ãƒ€ã«æ¸¡ã™å‰ã«å®Ÿè¡Œã™ã‚‹å‡¦ç†
 	mat = DirectX::XMMatrixTranspose(mat);
 
 	DirectX::XMStoreFloat4x4(&m_Mat[0], mat);
@@ -184,15 +184,15 @@ void MakeDefaultShader(VertexShader** vs, PixelShader** ps)
 
 bool MeshRenderer::LoadModel(const char* file, float scale)
 {
-	// “o˜^Ï‚İ‚Ìƒ‚ƒfƒ‹‚ªŒ©‚Â‚©‚Á‚½‚ç
-	// ƒ[ƒh‚¹‚¸‚É“o˜^Ï‚İ‚Ìƒ‚ƒfƒ‹ƒf[ƒ^‚ğ•Ô‚·B
+	// ç™»éŒ²æ¸ˆã¿ã®ãƒ¢ãƒ‡ãƒ«ãŒè¦‹ã¤ã‹ã£ãŸã‚‰
+	// ãƒ­ãƒ¼ãƒ‰ã›ãšã«ç™»éŒ²æ¸ˆã¿ã®ãƒ¢ãƒ‡ãƒ«ãƒ‡ãƒ¼ã‚¿ã‚’è¿”ã™ã€‚
 	for (auto it = m_ModelList.begin(); it != m_ModelList.end(); it++)
 		if (it->first == file) {
 			m_MeshInfo = *it->second;
 			return true;
 		}
 
-	// assimp‚Ì“Ç‚İ‚İ‚Ìİ’è
+	// assimpã®èª­ã¿è¾¼ã¿æ™‚ã®è¨­å®š
 	Assimp::Importer importer;
 	int flag = 0;
 	flag |= aiProcess_Triangulate;
@@ -200,42 +200,42 @@ bool MeshRenderer::LoadModel(const char* file, float scale)
 	flag |= aiProcess_JoinIdenticalVertices;
 	flag |= aiProcess_FlipUVs;
 	//	if (flip) flag |= aiProcess_MakeLeftHanded;
-		// assimp‚Å“Ç‚İ‚İ
+		// assimpã§èª­ã¿è¾¼ã¿
 	const aiScene* pScene = importer.ReadFile(file, flag);
 	if (!pScene) {
-		MessageBox(nullptr, "ƒ‚ƒfƒ‹ƒtƒ@ƒCƒ‹‚ğƒZƒbƒg‚µ‚Ä‚­‚¾‚³‚¢", "Error", MB_OK);
+		MessageBox(nullptr, "ãƒ¢ãƒ‡ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚»ãƒƒãƒˆã—ã¦ãã ã•ã„", "Error", MB_OK);
 		return false;
 	}
-	// “Ç‚İ‚ñ‚¾ƒf[ƒ^‚ğŠî‚ÉƒƒbƒVƒ…‚Ìƒf[ƒ^‚ğŠm•Û
+	// èª­ã¿è¾¼ã‚“ã ãƒ‡ãƒ¼ã‚¿ã‚’åŸºã«ãƒ¡ãƒƒã‚·ãƒ¥ã®ãƒ‡ãƒ¼ã‚¿ã‚’ç¢ºä¿
 	m_MeshInfo.m_meshNum = pScene->mNumMeshes;
 	m_MeshInfo.m_pMeshes = new Mesh[m_MeshInfo.m_meshNum];
 
-	// ƒƒbƒVƒ…‚²‚Æ‚É’¸“_ƒf[ƒ^AƒCƒ“ƒfƒbƒNƒXƒf[ƒ^‚ğ“Ç‚İæ‚è
+	// ãƒ¡ãƒƒã‚·ãƒ¥ã”ã¨ã«é ‚ç‚¹ãƒ‡ãƒ¼ã‚¿ã€ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿å–ã‚Š
 	for (unsigned int i = 0; i < m_MeshInfo.m_meshNum; ++i) {
-		// ƒƒbƒVƒ…‚ğŠî‚É’¸“_‚Ìƒf[ƒ^‚ğŠm•Û
+		// ãƒ¡ãƒƒã‚·ãƒ¥ã‚’åŸºã«é ‚ç‚¹ã®ãƒ‡ãƒ¼ã‚¿ã‚’ç¢ºä¿
 		aiVector3D zero(0.0f, 0.0f, 0.0f);
 		m_MeshInfo.m_pMeshes[i].vertexNum = pScene->mMeshes[i]->mNumVertices;
 		m_MeshInfo.m_pMeshes[i].pVertices = new MeshRenderer::Vertex[m_MeshInfo.m_pMeshes[i].vertexNum];
 
-		// ƒƒbƒVƒ…“à‚Ì’¸“_ƒf[ƒ^‚ğ“Ç‚İæ‚è
+		// ãƒ¡ãƒƒã‚·ãƒ¥å†…ã®é ‚ç‚¹ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿å–ã‚Š
 		for (unsigned int j = 0; j < m_MeshInfo.m_pMeshes[i].vertexNum; ++j) {
-			// ’l‚Ì‹zo‚µ
+			// å€¤ã®å¸å‡ºã—
 			aiVector3D pos = pScene->mMeshes[i]->mVertices[j];
 			aiVector3D uv = pScene->mMeshes[i]->HasTextureCoords(0) ?
 				pScene->mMeshes[i]->mTextureCoords[0][j] : zero;
-			// ’l‚ğİ’è
+			// å€¤ã‚’è¨­å®š
 			m_MeshInfo.m_pMeshes[i].pVertices[j] = {
 				DirectX::XMFLOAT3(pos.x * scale, pos.y * scale, pos.z * scale),
 				DirectX::XMFLOAT2(uv.x, uv.y)
 			};
 		}
 
-		// ƒƒbƒVƒ…‚ğŒ³‚ÉƒCƒ“ƒfƒbƒNƒX‚Ìƒf[ƒ^‚ğŠm•Û
-		// ¦face‚Íƒ|ƒŠƒSƒ“‚Ì”‚ğ•\‚·i‚Pƒ|ƒŠƒSƒ“‚Å3ƒCƒ“ƒfƒbƒNƒX
+		// ãƒ¡ãƒƒã‚·ãƒ¥ã‚’å…ƒã«ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®ãƒ‡ãƒ¼ã‚¿ã‚’ç¢ºä¿
+		// â€»faceã¯ãƒãƒªã‚´ãƒ³ã®æ•°ã‚’è¡¨ã™ï¼ˆï¼‘ãƒãƒªã‚´ãƒ³ã§3ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
 		m_MeshInfo.m_pMeshes[i].indexNum = pScene->mMeshes[i]->mNumFaces * 3;
 		m_MeshInfo.m_pMeshes[i].pIndices = new unsigned int[m_MeshInfo.m_pMeshes[i].indexNum];
 
-		// ƒƒbƒVƒ…“à‚ÌƒCƒ“ƒfƒbƒNƒXƒf[ƒ^‚ğ“Ç‚İæ‚è
+		// ãƒ¡ãƒƒã‚·ãƒ¥å†…ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿å–ã‚Š
 		for (unsigned int j = 0; j < pScene->mMeshes[i]->mNumFaces; ++j) {
 			aiFace face = pScene->mMeshes[i]->mFaces[j];
 			int idx = j * 3;
@@ -244,10 +244,10 @@ bool MeshRenderer::LoadModel(const char* file, float scale)
 			m_MeshInfo.m_pMeshes[i].pIndices[idx + 2] = face.mIndices[2];
 		}
 
-		// ƒ}ƒeƒŠƒAƒ‹‚ÌŠ„‚è“–‚Ä
+		// ãƒãƒ†ãƒªã‚¢ãƒ«ã®å‰²ã‚Šå½“ã¦
 		m_MeshInfo.m_pMeshes[i].materialID = pScene->mMeshes[i]->mMaterialIndex;
 
-		// ƒƒbƒVƒ…‚ğŒ³‚É’¸“_ƒoƒbƒtƒ@ì¬
+		// ãƒ¡ãƒƒã‚·ãƒ¥ã‚’å…ƒã«é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ä½œæˆ
 		MeshBuffer::Description desc = {};
 		desc.pVtx = m_MeshInfo.m_pMeshes[i].pVertices;
 		desc.vtxSize = sizeof(Vertex);
@@ -259,30 +259,39 @@ bool MeshRenderer::LoadModel(const char* file, float scale)
 		m_MeshInfo.m_pMeshes[i].pMesh = new MeshBuffer(desc);
 	}
 
-	// ƒeƒNƒXƒ`ƒƒ‚ğ“Ç‚İ‚ŞêŠ‚ğ’Tõ
+	// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’èª­ã¿è¾¼ã‚€å ´æ‰€ã‚’æ¢ç´¢
 	std::string dir = file;
-	dir = dir.substr(0, dir.find_last_of('/') + 1);	// “Ç‚İ‚Şƒtƒ@ƒCƒ‹ƒpƒX‚©‚çƒtƒ@ƒCƒ‹–¼‚ğæ‚èœ‚­
-													// Assets/Model/xx.fbx ¨ Assets/Model/
-	// “Ç‚İ‚ñ‚¾ƒf[ƒ^‚ğŒ³‚Éƒ}ƒeƒŠƒAƒ‹‚Ìƒf[ƒ^‚ÌŠm•Û
+	dir = dir.substr(0, dir.find_last_of('/') + 1);	// èª­ã¿è¾¼ã‚€ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ã‹ã‚‰ãƒ•ã‚¡ã‚¤ãƒ«åã‚’å–ã‚Šé™¤ã
+													// Assets/Model/xx.fbx â†’ Assets/Model/
+	// èª­ã¿è¾¼ã‚“ã ãƒ‡ãƒ¼ã‚¿ã‚’å…ƒã«ãƒãƒ†ãƒªã‚¢ãƒ«ã®ãƒ‡ãƒ¼ã‚¿ã®ç¢ºä¿
 	m_MeshInfo.m_materialNum = pScene->mNumMaterials;
 	m_MeshInfo.m_pMaterials = new Material[m_MeshInfo.m_materialNum];
 
-	// ƒ}ƒeƒŠƒAƒ‹‚²‚Æ‚Éƒf[ƒ^‚Ì“Ç‚İæ‚è
+	// ãƒãƒ†ãƒªã‚¢ãƒ«ã”ã¨ã«ãƒ‡ãƒ¼ã‚¿ã®èª­ã¿å–ã‚Š
 	HRESULT hr;
 	for (unsigned int i = 0; i < m_MeshInfo.m_materialNum; ++i) {
-		// ƒeƒNƒXƒ`ƒƒ‚Ì“Ç‚İæ‚è
+		// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®èª­ã¿å–ã‚Š
 		aiString path;
 		if (pScene->mMaterials[i]->Get(AI_MATKEY_TEXTURE_DIFFUSE(0), path) == AI_SUCCESS) {
-			// ƒ‚ƒfƒ‹ƒtƒ@ƒCƒ‹‚É‹L˜^‚³‚ê‚Ä‚¢‚½ƒtƒ@ƒCƒ‹ƒpƒX‚©‚ç“Ç‚İ‚İ
+			// ãƒ¢ãƒ‡ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã«è¨˜éŒ²ã•ã‚Œã¦ã„ãŸãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ã‹ã‚‰èª­ã¿è¾¼ã¿
 			hr = LoadTextureFromFile(path.C_Str(), &m_MeshInfo.m_pMaterials[i].pTexture);
 			if (FAILED(hr)) {
-				// ƒ‚ƒfƒ‹‚Æ“¯‚¶ƒtƒHƒ‹ƒ_“à‚ÅƒeƒNƒXƒ`ƒƒƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚İ
+				// ãƒ¢ãƒ‡ãƒ«ã¨åŒã˜ãƒ•ã‚©ãƒ«ãƒ€å†…ã§ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã¿
 				std::string file = dir;
 				file += path.C_Str();
 				hr = LoadTextureFromFile(file.c_str(), &m_MeshInfo.m_pMaterials[i].pTexture);
 			}
+			if (FAILED(hr)) {
+				// ãƒ¢ãƒ‡ãƒ«ã¨åŒã˜ãƒ•ã‚©ãƒ«ãƒ€å†…ã§ã€
+				// ä¸€æ™‚çš„ãªDemoCubeç”¨ã ãŒã€ä»Šå¾Œä½¿ã†ã‹ã‚‚ãƒ»ä½¿ãˆã‚‹ã‹ã‚‚ã—ã‚Œãªã„ã€‚
+				std::string file = path.C_Str();
+				// [..\\sourceimages\\]ã‚’çœç•¥
+				file = file.substr(16);
+				file = dir + "/" + file;
+				hr = LoadTextureFromFile(file.c_str(), &m_MeshInfo.m_pMaterials[i].pTexture);
+			}
 			if (FAILED(hr)) { 
-				MessageBox(nullptr, "ƒ‚ƒfƒ‹ƒtƒ@ƒCƒ‹‚Æ“¯‚¶ƒtƒHƒ‹ƒ_‚Éw’è‚ÌƒeƒNƒXƒ`ƒƒ‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ", "Error", MB_OK);
+				MessageBox(nullptr, "ãƒ¢ãƒ‡ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã¨åŒã˜ãƒ•ã‚©ãƒ«ãƒ€ã«æŒ‡å®šã®ãƒ†ã‚¯ã‚¹ãƒãƒ£ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“", "Error", MB_OK);
 				return false;
 			}
 		}
@@ -291,7 +300,7 @@ bool MeshRenderer::LoadModel(const char* file, float scale)
 		}
 	}
 
-	// “o˜^‚·‚é
+	// ç™»éŒ²ã™ã‚‹
 	m_ModelList.push_back(std::pair<std::string, Info*>(file, &m_MeshInfo));
 	return true;
 }
